@@ -22,13 +22,18 @@ public class MergeSort {
                     sortedArray[k++] = array[j++];
                 }
             }
-            while (i > mid && j <= end) {
-                sortedArray[k++] = array[j++];
-            }
-            while (j > end && i <= mid) {
+//            while (i > mid && j <= end) {
+//                sortedArray[k++] = array[j++];
+//            }
+//            while (j > end && i <= mid) {
+//                sortedArray[k++] = array[i++];
+//            }
+            while (i <= mid) {
                 sortedArray[k++] = array[i++];
             }
-
+            while (j <= end) {
+                sortedArray[k++] = array[j++];
+            }
             for (int t = start; t < end; t++) {
                 array[t++] = sortedArray[t++];
             }
