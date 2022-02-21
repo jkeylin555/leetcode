@@ -48,13 +48,17 @@ public class MergeSort {
     }
 
     public void mergeSort2(int[] array, int[] helper, int start, int end) {
-        if (array.length == 1 || array.length ==0) {
+
+        if (array == null || array.length ==0) {
+            return;
+        }
+        if (end - start == 0) {
             return;
         }
         int k = 0;
-        for (int i = 0; i < end - start + 1; i++) {
-            helper[i] = array[i];
-        }
+//        for (int i = 0; i < end - start + 1; i++) {
+//            helper[i] = array[i];
+//        }
 
         int mid = start + (end - start - 1)/2;
         int i = start;
@@ -76,8 +80,8 @@ public class MergeSort {
         while (j <= end) {
             helper[k++] = array[j++];
         }
-        for (int t = start; t < end; t++) {
-            array[t++] = helper[t++];
+        for (int t = start; t <= end; t++) {
+            array[t] = helper[t - start];
         }
 
     }
@@ -85,8 +89,8 @@ public class MergeSort {
         int[] arr = {3, 2, 1, 3, 7, 1, 2, 9, 0, 7, 8};
         MergeSort mergeSort = new MergeSort();
         int[] helper = new int[arr.length];
-        mergeSort.mergeSort(arr,0, arr.length- 1);
-//        mergeSort.mergeSort2(arr, helper,0, arr.length);
+//        mergeSort.mergeSort(arr,0, arr.length- 1);
+        mergeSort.mergeSort2(arr, helper,0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
 }
