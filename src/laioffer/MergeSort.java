@@ -1,12 +1,17 @@
 package laioffer;
 
+import java.util.Arrays;
+
 public class MergeSort {
 
     public void mergeSort(int[] array, int start, int end) {
-        if (array.length == 1 || array.length ==0) {
+        if (array.length == 0 || array == null) {
             return;
         }
-        int[] sortedArray = new int[array.length - 1];
+        if (end - start ==0) {
+            return;
+        }
+        int[] sortedArray = new int[end - start + 1];
 
         int mid = start + (end - start - 1)/2;
         int i = start;
@@ -34,8 +39,8 @@ public class MergeSort {
             while (j <= end) {
                 sortedArray[k++] = array[j++];
             }
-            for (int t = start; t < end; t++) {
-                array[t++] = sortedArray[t++];
+            for (int t = start; t <= end; t++) {
+                array[t] = sortedArray[t - start];
             }
 
 //        }
@@ -80,7 +85,8 @@ public class MergeSort {
         int[] arr = {3, 2, 1, 3, 7, 1, 2, 9, 0, 7, 8};
         MergeSort mergeSort = new MergeSort();
         int[] helper = new int[arr.length];
-        mergeSort.mergeSort2(arr, helper,0, arr.length);
-        System.out.println(arr);
+        mergeSort.mergeSort(arr,0, arr.length- 1);
+//        mergeSort.mergeSort2(arr, helper,0, arr.length);
+        System.out.println(Arrays.toString(arr));
     }
 }
