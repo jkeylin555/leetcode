@@ -24,7 +24,7 @@ public class KSmallestSum {
 
 		@Override
 		public int hashCode(){
-			return x * 31 * 31 + y * 31 + sum;
+			return x * 31 + y;
 		}
 	}
 	public int kSmallestSum(int[] A, int[] B, int k) {
@@ -64,8 +64,17 @@ public class KSmallestSum {
 		//Element is self defined, so it will be overrided (both in equals and hashCode) so that it can work.
 		Element element1 = new Element(1, 2, 3);
 		Element element2 = new Element(1, 2, 3);
+		Element element3 = new Element(0, 1, 2);
+		Element element4 = new Element(1, 2, 4);
 		Set<Element> set = new HashSet<Element>();
 		Set<Integer> set2 = new HashSet<Integer>();
+
+		PriorityQueue<Element> minheap2 = new PriorityQueue<Element>(4);
+		minheap2.offer(element1);
+		minheap2.offer(element2);
+		minheap2.offer(element3);
+		minheap2.offer(element4);
+		System.out.println(minheap2.peek());
 		System.out.println(set.add(element1));
 		System.out.println(set.add(element2));
 		//Integer has overrided(both equals and hashCode
