@@ -13,6 +13,19 @@ public class KSmallestSum {
 			this.y = y;
 			this.sum = sum;
 		}
+		@Override
+		public boolean equals(Object obj) {
+			if (obj instanceof Element) {
+				Element element = (Element) obj;
+				return this.x == element.x && this.y == element.y && this.sum == element.sum;
+			}
+			return false;
+		}
+
+		@Override
+		public int hashCode(){
+			return x * 31 * 31 + y * 31 + sum;
+		}
 	}
 	public int kSmallestSum(int[] A, int[] B, int k) {
 		Set<Element> set = new HashSet<>();
@@ -48,8 +61,22 @@ public class KSmallestSum {
 	public static void main(String[] args) {
 		int[] A = {1, 7, 11};
 		int[] B = {2, 4, 6};
+		//Element is self defined, so it will be overrided (both in equals and hashCode) so that it can work.
+		Element element1 = new Element(1, 2, 3);
+		Element element2 = new Element(1, 2, 3);
+		Set<Element> set = new HashSet<Element>();
+		Set<Integer> set2 = new HashSet<Integer>();
+		System.out.println(set.add(element1));
+		System.out.println(set.add(element2));
+		//Integer has overrided(both equals and hashCode
+		Integer integer1 = 1000;
+		Integer integer2 = 1000;
+
+		System.out.println(set2.add(integer1));
+		System.out.println(set2.add(integer2));
+
 		KSmallestSum kSmallestSum = new KSmallestSum();
-		int result = kSmallestSum.kSmallestSum(A, B, 3);
+		int result = kSmallestSum.kSmallestSum(A, B, 8);
 		System.out.println(result);
 	}
 }
