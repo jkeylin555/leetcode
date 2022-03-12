@@ -46,8 +46,6 @@ public class HashMapExercise {
 		map2.put("b", 2);
 		System.out.println(map.toString());
 		System.out.println(map.toString());
-
-
 	}
 
 
