@@ -31,7 +31,6 @@ public class QuickSort {
 		array[b] = temp;
 	}
 	public static void main(String[] args) {
-//		System.out.println((int)(Math.random() * 5));
 		int[] array = {3, 1, 2, 4, 7, 6, 2, 4, 3, 5};
 		int[] array2 = {1, -3};
 		int[] array3 = {5, 2, 3, 1};
@@ -39,7 +38,6 @@ public class QuickSort {
 		QuickSort quickSort = new QuickSort();
 		quickSort.quickSort(array3, 0, array3.length - 1);
 		System.out.println(Arrays.toString(array3));
-
 	}
 }
 
