@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class HashMapExercise {
+
 	static class Coordinate {
 		int x, y;
 		public Coordinate(int x, int y) {

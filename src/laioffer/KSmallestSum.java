@@ -80,6 +80,7 @@ public class KSmallestSum {
 		//Integer has overrided(both equals and hashCode
 		Integer integer1 = 1000;
 		Integer integer2 = 1000;
+		Integer integer3 = 2000; 
 
 		System.out.println(set2.add(integer1));
 		System.out.println(set2.add(integer2));
