@@ -9,20 +9,21 @@ public class QuickSort {
 		}
 		int pivotRand = (int)(Math.random() * (right - left) + left);
 		swap(array, left, pivotRand);
-		int start = left + 1;
+		int start = left;
 		int end = right;
 		while (start < end) {
-			while (array[start] <= array[left] && start < end) {
-				start++;
-			}
 			while (array[end] > array[left] && start < end) {
 				end--;
 			}
+			while (array[start] <= array[left] && start < end) {
+				start++;
+			}
+
 			swap(array, start, end);
 		}
-		swap(array, left, start - 1);
-		quickSort(array, left, start - 1);
-		quickSort(array, start, right);
+		swap(array, left, end);
+		quickSort(array, left, end - 1);
+		quickSort(array, end + 1, right);
 
 	}
 	private void swap (int[] array, int a, int b) {
@@ -33,13 +34,12 @@ public class QuickSort {
 	public static void main(String[] args) {
 //		System.out.println((int)(Math.random() * 5));
 		int[] array = {3, 1, 2, 4, 7, 6, 2, 4, 3, 5};
-		int[] array2 = {-3, 1};
+		int[] array2 = {1, -3};
 		QuickSort quickSort = new QuickSort();
 		quickSort.quickSort(array2, 0, array2.length - 1);
 		System.out.println(Arrays.toString(array2));
 
 	}
 }
-
 
 
