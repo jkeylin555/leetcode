@@ -29,6 +29,7 @@ public class HashMapExercise {
 			Coordinate coordinate = (Coordinate) obj;
 			return this.x == coordinate.x && this.y == coordinate.y;
 		}
+
 		@Override
 		public int hashCode() {
 			return x * 100 + y;
