@@ -42,9 +42,7 @@ public class MergeSort {
             for (int t = start; t <= end; t++) {
                 array[t] = sortedArray[t - start];
             }
-
 //        }
-
     }
 
     public void mergeSort2(int[] array, int[] helper, int start, int end) {
