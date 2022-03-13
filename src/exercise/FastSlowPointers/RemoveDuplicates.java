@@ -69,9 +69,23 @@ public class RemoveDuplicates {
 				} else {
 					array[slow++] = array[fast++];
 				}
-				if (fast == array.length - 1) {
+				if (fast ==  array.length - 1) {
 					array[slow++] = array[fast++];
 				}
+			}
+		}
+		return array;
+	}
+
+	private int[] removeDuplicates4(int[] array) {
+		int slow = 0, fast = 0, begin;
+		while (fast < array.length) {
+			begin = fast;
+			while (fast < array.length && array[fast] == array[begin]) {
+				fast++;
+			}
+			if (fast - begin == 1) {
+				array[slow++] = array[begin];
 			}
 		}
 		return array;
@@ -86,7 +100,7 @@ public class RemoveDuplicates {
 		int[] array4 = {1,1,2,3,3};
 		int[] array5 = {1,1,2,3,4,4,4,5};
 		RemoveDuplicates removeDuplicates = new RemoveDuplicates();
-		int[] result = removeDuplicates.removeDuplicates3(array4);
+		int[] result = removeDuplicates.removeDuplicates4(array5);
 		System.out.println(Arrays.toString(result));
 	}
 
