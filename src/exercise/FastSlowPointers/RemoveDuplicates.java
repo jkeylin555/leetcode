@@ -38,16 +38,38 @@ public class RemoveDuplicates {
 		}
 
 		return array;
-
 	}
+
+	private int[] removeDuplicates2_2(int[] array) {
+		if (array.length <= 0) {
+			return new int[0];
+		}
+		int slow = 2, fast = 2;
+		while (fast < array.length) {
+			if (array[fast] == array[slow - 2]) {
+				fast++;
+			} else {
+				array[slow++]  = array[fast++];
+			}
+		}
+
+		return array;
+	}
+
+
+
+
+
 	public static void main(String[] args) {
 		int[] array = {0,0,1,1,1,2,2,3,3,4};
 		int[] array2 = {1,1,1,2,2,3};
 		int[] array3 = {1,1,1,1,2,2,3,3};
 		RemoveDuplicates removeDuplicates = new RemoveDuplicates();
-		int[] result = removeDuplicates.removeDuplicates2(array2);
+		int[] result = removeDuplicates.removeDuplicates2_2(array3);
 		System.out.println(Arrays.toString(result));
 	}
 
 
 }
+
+
