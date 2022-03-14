@@ -1,4 +1,4 @@
-package exercise.FastSlowPointers;
+package recursion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,16 +19,12 @@ public class SpiralMatrix {
 				result.add(matrix[rowStart + rowLength - 1][i]);
 			}
 		}
-
         if (colLen > 1) {
 			for (int i = rowStart + rowLength - 2; i > rowStart; i--) {
 				result.add(matrix[i][colStart]);
 			}
 		}
-
 		spiralMatrix(matrix, result, rowStart + 1, rowLength - 2, colStart + 1, colLen - 2);
-
-
 	}
 	public static void main(String[] args) {
 		int[][] matrix ={{1,2,3,4}, {5,6,7,8},{9,10,11,12}};
