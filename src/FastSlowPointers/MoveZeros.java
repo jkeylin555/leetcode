@@ -1,4 +1,4 @@
-package exercise.FastSlowPointers;
+package FastSlowPointers;
 
 import java.util.Arrays;
 

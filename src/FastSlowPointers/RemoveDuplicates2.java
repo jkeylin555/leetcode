@@ -1,8 +1,7 @@
-package exercise.FastSlowPointers;
+package FastSlowPointers;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Stack;
 
 public class RemoveDuplicates2 {
 	public String removeDuplicates2 (String s) {

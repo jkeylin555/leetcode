@@ -1,6 +1,6 @@
 package laioffer;
 
-public class LinkedList {
+public class LinkedList<I extends Number> {
 
     public static void main(String[] args) {
         ListNode listNode1 = new ListNode(1);
@@ -10,7 +10,7 @@ public class LinkedList {
         listNode1.next = listNode2;
         listNode2.next = listNode3;
         listNode3.next = listNode4;
-        LinkedList linkedList = new LinkedList();
+        LinkedList<Number> linkedList = new LinkedList<Number>();
         int res = linkedList.getLength(listNode1);
         System.out.println(res);
 
