@@ -2,12 +2,10 @@ package BFS;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Queue;
-import java.util.Stack;
-import laioffer.LinkedList;
+
 
 public class PrintBinaryTree {
-	public static class TreeNode {
+	 private static class TreeNode {
 		int val;
 		TreeNode left;
 		TreeNode right;
@@ -44,11 +42,14 @@ public class PrintBinaryTree {
 	}
 	public static void main(String[] args) {
 		Deque<TreeNode> queue = new ArrayDeque<>();
-		TreeNode root = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3));
+		TreeNode root = new TreeNode(1, new TreeNode(2, new TreeNode(4, new TreeNode(8), new TreeNode(9)),
+				new TreeNode(5)), new TreeNode(3, new TreeNode(6), new TreeNode(7)));
+
+		TreeNode root2 = new TreeNode(1);
+		root2.left = new TreeNode(2, new TreeNode(4), new TreeNode(5));
+		root2.right = new TreeNode(3, new TreeNode(6), new TreeNode(7));
         PrintBinaryTree printBinaryTree = new PrintBinaryTree();
-        printBinaryTree.printBinaryTree(root);
-
-
+        printBinaryTree.printBinaryTree(root2);
 
 //		Queue<Integer> queue = new ArrayDeque();
 //		Deque<Integer> stack = new ArrayDeque<>();
