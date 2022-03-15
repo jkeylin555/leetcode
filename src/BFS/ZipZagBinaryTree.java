@@ -16,10 +16,11 @@ public class ZipZagBinaryTree {
 			List<Integer> list = new ArrayList<>();
 			for (int i = 0; i < size; i++) {
 				TreeNode treeNode;
-                if (!even) {
-                	treeNode = queue.poll();
-				} else {
+                if (even) {
 					treeNode = queue.pollLast();
+
+				} else {
+					treeNode = queue.poll();
 				}
 				list.add(treeNode.val);
 
@@ -30,7 +31,7 @@ public class ZipZagBinaryTree {
 					if (treeNode.left != null) {
 						queue.offerFirst(treeNode.left);
 					}
-					} else {
+				} else {
 					if (treeNode.left != null) {
 						queue.offer(treeNode.left);
 					}
