@@ -9,20 +9,22 @@ public class ListNode {
 		this.next = null;
 		this.random = null;
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj instanceof ListNode) {
-			ListNode node = (ListNode) obj;
-			return this.val == node.val;
-		}
-		return false;
-	}
-	@Override
-	public int hashCode() {
-		return val * 31;
-	}
+
+//No Override Here!!!
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj) {
+//			return true;
+//		}
+//		if (obj instanceof ListNode) {
+//			ListNode node = (ListNode) obj;
+//			return this.val == node.val;
+//		}
+//		return false;
+//	}
+//	@Override
+//	public int hashCode() {
+//		return val * 31;
+//	}
 
 }

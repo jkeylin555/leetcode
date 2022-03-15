@@ -47,16 +47,19 @@ public class CopyRandomPointer {
 		node.next = new ListNode(13);
 		node.random = null;
 		node.next.next = new ListNode(11);
-		node.next.random = new ListNode(7);
+		node.next.random = node;
 		node.next.next.next = new ListNode(10);
 		node.next.next.random = new ListNode(1);
-		node.next.next.next.next = new ListNode(1);
-		node.next.next.next.random = new ListNode(11);
+		node.next.next.next.next = node.next.next.random;
+		node.next.next.next.random = node.next.next;
 		node.next.next.next.next.next = null;
-		node.next.next.next.next.random = new ListNode(7);
+		node.next.next.next.next.random = node;
 		CopyRandomPointer copyRandomPointer = new CopyRandomPointer();
 		ListNode result = copyRandomPointer.randomPointer(node);
-		System.out.println(result.val);
+		while (result != null) {
+			System.out.println(result.val);
+			result = result.next;
+		}
 //		Map<ListNode, ListNode> node2 = new HashMap();
 //		ListNode node3 = null;
 //		ListNode node4 = null;
