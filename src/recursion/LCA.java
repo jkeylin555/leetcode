@@ -4,7 +4,7 @@ import BFS.TreeNode;
 
 public class LCA {
 	public TreeNode LCA(TreeNode root, TreeNode a, TreeNode b) {
-		if (root == null || root.val == a.val || root.val == b.val) {
+		if (root == null || root.equals(a) || root.equals(b)) {
 			return root;
 		}
 		TreeNode left = LCA(root.left, a, b);
