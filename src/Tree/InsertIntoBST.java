@@ -14,7 +14,6 @@ public class InsertIntoBST {
 			root.right = insertIntoBST(root.right, val);
 		}
 		return root;
-
 	}
 
 	private TreeNode insertIntoBST2 (TreeNode root, int val) {
