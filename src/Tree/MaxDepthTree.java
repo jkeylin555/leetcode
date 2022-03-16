@@ -3,7 +3,7 @@ package Tree;
 import BFS.TreeNode;
 
 public class MaxDepthTree {
-	private int getMaxDepth(TreeNode root) {
+	public static int getMaxDepth(TreeNode root) {
 		if (root == null) {
 			return 0;
 		}
