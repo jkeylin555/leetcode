@@ -14,20 +14,20 @@ public class TreeNode {
 		this.left = left;
 		this.right = right;
 	}
-	@Override
-	public boolean equals (Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj instanceof TreeNode) {
-			TreeNode treeNode = (TreeNode) obj;
-			return this.val == treeNode.val;
-		}
-		return false;
-	}
-	@Override
-	public int hashCode() {
-		return val * 31;
-	}
+//	@Override
+//	public boolean equals (Object obj) {
+//		if (this == obj) {
+//			return true;
+//		}
+//		if (obj instanceof TreeNode) {
+//			TreeNode treeNode = (TreeNode) obj;
+//			return this.val == treeNode.val;
+//		}
+//		return false;
+//	}
+//	@Override
+//	public int hashCode() {
+//		return val * 31;
+//	}
 
 }

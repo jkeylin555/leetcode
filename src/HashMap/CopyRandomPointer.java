@@ -34,9 +34,7 @@ public class CopyRandomPointer {
 					map.put(head.next, curNode.next);
 				}
 			}
-
 			head = head.next;
-
 			curNode = curNode.next;
 		}
 		return newHead;
