@@ -1,5 +1,6 @@
 package laioffer;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.PriorityQueue;
@@ -29,6 +30,7 @@ public class KSmallestSum {
 	}
 	public int kSmallestSum(int[] A, int[] B, int k) {
 		Set<Element> set = new HashSet<>();
+		PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(Collections.reverseOrder());
 		PriorityQueue<Element> minheap = new PriorityQueue<Element>(k, new Comparator<Element>() {
 			@Override
 			public int compare(Element o1, Element o2) {

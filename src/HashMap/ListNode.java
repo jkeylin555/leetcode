@@ -1,8 +1,8 @@
 package HashMap;
 
 public class ListNode {
-	int val;
-	ListNode next;
+	public int val;
+	public ListNode next;
 	ListNode random;
 	public ListNode(int val) {
 		this.val = val;
