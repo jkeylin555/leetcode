@@ -69,7 +69,5 @@ public class MergeKLists {
 			System.out.println(res.val);
 			res = res.next;
 		}
-
-
 	}
 }
