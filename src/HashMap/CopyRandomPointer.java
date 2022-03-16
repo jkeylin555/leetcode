@@ -19,7 +19,6 @@ public class CopyRandomPointer {
 				if (map.get(head.random) != null) {
 					curNode.random = map.get(head.random);
 				} else {
-
 					newRandom = new ListNode(head.random.val);
 					curNode.random = newRandom;
 					map.put(head.random, curNode.random);
