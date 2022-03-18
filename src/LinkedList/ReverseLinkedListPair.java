@@ -4,44 +4,22 @@ import BFS.TreeNode;
 import HashMap.ListNode;
 import laioffer.LinkedList;
 
-public class ReverseLinkedList {
-	public ListNode reverse (ListNode head) {
+public class ReverseLinkedListPair {
+	public ListNode reverse(ListNode head) {
 		if (head == null) {
 			return null;
 		}
-		ListNode pre = null;
-		while (head != null) {
-			ListNode next = head.next;
-			head.next = pre;
-			pre = head;
-			head = next;
-
+		ListNode next = null, node;
+		if (head.next == null) {
+			next = head.next;
+			node = head;
+		} else {
+			next = head.next.next;
+			node = head.next;
 		}
-		return pre;
-	}
-
-
-	public ListNode reverse2 (ListNode head, ListNode pre) {
-		if (head == null) {
-			return pre;
-		}
-		ListNode next = head.next;
-		head.next = pre;
-		pre = head;
-		ListNode result = reverse2(next, pre);
-		return result;
-	}
-
-	public ListNode reverse3(ListNode head) {
-		if (head == null || head.next == null)
-		{
-			return head;
-		}
-		ListNode ret = reverse3(head.next);
-		head.next.next = head;
-		head.next = null;
-
-		return ret;
+	    node.next = head;
+		head.next = reverse(next);
+		return node;
 	}
 
 
@@ -61,19 +39,11 @@ public class ReverseLinkedList {
 		listNode5.next = listNode6;
 		listNode6.next = listNode7;
 		LinkedList<Integer> linkedList = new LinkedList<Integer>();
-		ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
-		ListNode node = reverseLinkedList.reverse3(listNode1);
+		ReverseLinkedListPair reverseLinkedListPair = new ReverseLinkedListPair();
+		ListNode node = reverseLinkedListPair.reverse(listNode1);
 		while (node != null) {
 			System.out.println(node.val);
 			node = node.next;
 		}
-
-
 	}
-
 }
-
-
-
-
-
