@@ -9,7 +9,7 @@ import java.util.List;
 public class GenerateParentheses {
 	static List<List<Character>> results = new ArrayList<>();
 	public void generate(int n, int level, LinkedList<Character> s, int l, int r) {
-		if (level == 2 * n) {
+		if (l + r == 2 * n) {
 			results.add(new ArrayList<>(s));
 			return;
 		}
