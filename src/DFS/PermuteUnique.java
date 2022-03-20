@@ -41,5 +41,6 @@ public class PermuteUnique {
 		PermuteUnique permuteUnique = new PermuteUnique();
 		permuteUnique.permute(nums, 0);
 		System.out.println(results);
+		System.out.println((int) Math.sqrt(8));
 	}
 }

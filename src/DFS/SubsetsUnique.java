@@ -19,5 +19,6 @@ public class SubsetsUnique {
 			level++;
 		}
 		subsets(nums, level + 1, list);
+
 	}
 }
