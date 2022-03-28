@@ -32,7 +32,6 @@ public class QuickSort {
 	}
 
 
-
 	public void quickSort2(int[] array, int left, int right) {
 		if (right <= left) {
 			return;

@@ -8,7 +8,6 @@ import java.util.Set;
 
 public class TrappingRainWaterII {
 	public int trapRainWater(int[][] heightMap) {
-		Set<Pair> set = new HashSet<>();
 		int[][] directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 		int maxHeight = 0;
 		int res = 0;
