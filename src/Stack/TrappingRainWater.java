@@ -9,18 +9,23 @@ public class TrappingRainWater {
 		int leftMax = height[0];
 		int res = 0;
 		for (int i = 0; i < height.length; i++) {
-			while (!stack.isEmpty() && height[i] >= stack.peek()) {
+			while (!stack.isEmpty() && height[i] >= height[stack.peek()]) {
 				int top = stack.pop();
-				res += leftMax - top;
+				if (stack.isEmpty()) {
+					break;
+				}
+				int upperHeight = Math.min(height[stack.peek()], height[i]);
+				int heightDiff = upperHeight - height[top];
+				res += heightDiff * (i - stack.peek() - 1);
 			}
-			stack.push(height[i]);
+			stack.push(i);
 			leftMax = Math.max(leftMax, height[i]);
 		}
 		return res;
 	}
 	public static void main(String[] args) {
-		int[] duNums = {0,1,0,2,1,0,1,3,2,1,2,1};
-		FastSlowPointers.TrappingRainWater trappingRainWater = new FastSlowPointers.TrappingRainWater();
+		int[] duNums = {4,2,0,7,2,5};
+		TrappingRainWater trappingRainWater = new TrappingRainWater();
 		System.out.println(trappingRainWater.trap(duNums));
 	}
 }
