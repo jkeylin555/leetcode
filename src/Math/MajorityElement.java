@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.Map;
 
 public class MajorityElement {
-	public int majority(int[] nums) {
+	public int majority(int[] nums, int k) {
 		Map<Integer, Integer> map = new HashMap<>();
 		for (int i = 0; i < nums.length; i++) {
-			if (map.size() == 0) {
-				map.put(nums[i], 1);
-			} else if (map.containsKey(nums[i])) {
+			if (map.containsKey(nums[i])) {
 				map.put(nums[i], map.get(nums[i]) + 1);
+			} else if (map.size() < k - 1) {
+				map.put(nums[i], 1);
 			} else {
 				Map.Entry<Integer,Integer> entry = map.entrySet().iterator().next();
 				int key = entry.getKey();
