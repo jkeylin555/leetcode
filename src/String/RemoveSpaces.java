@@ -7,24 +7,27 @@ public class RemoveSpaces {
 	public char[] remove(String str) {
 		int slow = 0, fast = 0;
 		char[] chars = str.toCharArray();
-		int count = 0;
+		boolean flag = false;
 		while (fast < chars.length) {
-			while (fast < chars.length && chars[fast] == ' ') {
+			while (fast < chars.length && chars[fast] == '_') {
 				fast++;
 			}
-			if (count > 0) {
+			if (fast == chars.length) {
+				break;
+			}
+			if (flag) {
 				chars[slow++] = ' ';
 			}
-			while (fast < chars.length && chars[fast] != ' ') {
+			while (fast < chars.length && chars[fast] != '_') {
 				chars[slow++] = chars[fast++];
 			}
-			count++;
+			flag = true;
 		}
 
 		return chars;
 	}
 	public static void main(String[] args) {
-		String str = "       st      ud      en t     ";
+		String str = "_____st___ud____en_t______";
 		RemoveSpaces removeSpaces = new RemoveSpaces();
 		System.out.println(removeSpaces.remove(str));
 	}
