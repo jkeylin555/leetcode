@@ -44,13 +44,53 @@ public class RemoveAdjacentDuplicates {
 			str += stack.pollLast();
 		}
 		return str;
+	}
 
+	public String removeDuplicates3(String s) {
+		char[] chars = s.toCharArray();
+		int slow = 0, fast = 1;
+		while (fast < chars.length) {
+			if (slow >= 0 && chars[fast] == chars[slow]) {
+				while (fast < chars.length && chars[fast] == chars[slow]) {
+					fast++;
+				}
+				slow--;
+			} else {
+				chars[++slow] = chars[fast++];
+			}
+
+		}
+		String str = "";
+		for (int i = 0; i <= slow; i++) {
+			str += chars[i];
+		}
+		return str;
+	}
+
+	public String removeDuplicates4(String s) {
+		char[] chars = s.toCharArray();
+		int slow = -1, fast = 0;
+		while (fast < chars.length) {
+			if (slow >= 0 && chars[fast] == chars[slow]) {
+				fast++;
+				slow--;
+			} else {
+				chars[++slow] = chars[fast++];
+			}
+
+		}
+		String str = "";
+		for (int i = 0; i <= slow; i++) {
+			str += chars[i];
+		}
+		return str;
 	}
 	public static void main(String[] args) {
-		String str = "aaaaaaa";
+		String str = "aaaaaaaa";
 		String str2 = "azxxzy";
+		String str3 = "abbaca";
 		RemoveAdjacentDuplicates removeAdjacentDuplicates = new RemoveAdjacentDuplicates();
-		System.out.println(removeAdjacentDuplicates.removeDuplicates2(str));
+		System.out.println(removeAdjacentDuplicates.removeDuplicates4(str));
 	}
 
 }
