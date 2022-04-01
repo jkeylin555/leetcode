@@ -67,6 +67,7 @@ public class RemoveAdjacentDuplicates {
 		return str;
 	}
 
+	// use virtual stack 
 	public String removeDuplicates4(String s) {
 		char[] chars = s.toCharArray();
 		int slow = -1, fast = 0;
