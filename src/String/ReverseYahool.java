@@ -20,11 +20,7 @@ public class ReverseYahool {
 			}
 		}
 		reverseString.reverse(chars, 0, chars.length - 1);
-		String res = "";
-		for (int k = 0; k < chars.length; k++) {
-			res += chars[k];
-		}
-		return res;
+		return String.valueOf(chars);
 	}
 
 	public static void main(String[] args) {
