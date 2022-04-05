@@ -61,13 +61,15 @@ public class ReverseYahool {
 		reverse(sb, 0, sb.length() - 1);
 		int i = 0, j = 0;
 		while (j < sb.length()) {
-			if (sb.charAt(j) == ' ' || j == sb.length() - 1) {
+			if (sb.charAt(j) == ' ') {
 				reverse(sb, i, j - 1);
 				i = ++j;
 			} else {
 				++j;
 			}
 		}
+		reverse(sb, i, j - 1);
+
 		return sb.toString();
 
 	}
