@@ -2,6 +2,8 @@ package String;
 
 import java.lang.module.FindException;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 public class ReplaceinString {
@@ -49,13 +51,37 @@ public class ReplaceinString {
 		return sb.toString();
 	}
 
+
+
+	public String findReplaceString2(String s, int[] indices, String[] sources, String[] targets) {
+		Map<Integer, Integer> map = new HashMap<>();
+		int maxIndex = 0;
+		for (int i = 0; i < indices.length; i++) {
+			if (indices[i] + sources[i].length() <= s.length() && s.substring(indices[i], indices[i] + sources[i].length()).equals(sources[i])) {
+				map.put(indices[i], i);
+			}
+		}
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < s.length(); i++) {
+			if (i >= maxIndex) {
+				if (map.containsKey(i)) {
+					sb.append(targets[map.get(i)]);
+					i = i + sources[map.get(i)].length() - 1;
+				} else {
+					sb.append(s.charAt(i));
+				}
+			}
+		}
+		return sb.toString();
+	}
+
 	public static void main(String[] args) {
 		String s = "abcd";
 		int[] indices = {0, 2};
-		String[] sources = {"a","cd"};
+		String[] sources = {"ab","cd"};
 		String[] target = {"ffff","eeee"};
 		ReplaceinString replaceinString = new ReplaceinString();
-		String res = replaceinString.findReplaceString(s, indices, sources, target);
+		String res = replaceinString.findReplaceString2(s, indices, sources, target);
 
 		System.out.println(res);
 
