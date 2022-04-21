@@ -1,4 +1,4 @@
-package recursion;
+package Sort;
 
 public class QuickSort {
 	public void quickSort(int[] nums) {
