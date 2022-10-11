@@ -3,11 +3,10 @@ package laioffer;
 public class test {
 
 }
-class B
-{
+class A {
     int a;
     char c;
-    public B() {
+    public A() {
         a = 1;
         c = 'a';
     }
