@@ -11,3 +11,12 @@ class AB {
         c = 'a';
     }
 }
+
+class M {
+    int a;
+    char c;
+    public M() {
+        a = 1;
+        c = 'a';
+    }
+}
