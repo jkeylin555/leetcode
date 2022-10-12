@@ -32,11 +32,4 @@ public class MedianOfTwoArrays {
 		}
 	}
 
-	public static void main(String[] args) {
-		int[] nums1 = {1};
-		int[] nums2 = {2,3,4};
-		MedianOfTwoArrays medianOfTwoArrays = new MedianOfTwoArrays();
-//		kthLargestElement.partion(nums2, 0 , 5);
-		System.out.println(medianOfTwoArrays.findMedianSortedArrays(nums1, 0, nums2, 0, 3));
-	}
 }
